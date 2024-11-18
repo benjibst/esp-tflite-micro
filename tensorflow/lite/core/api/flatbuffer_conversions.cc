@@ -957,6 +957,7 @@ TfLiteStatus ParseOpDataTfLite(const Operator* op, BuiltinOperator op_type,
     case BuiltinOperator_STABLEHLO_SELECT:
     case BuiltinOperator_STABLEHLO_SUBTRACT:
     case BuiltinOperator_STABLEHLO_TANH:
+    case BuiltinOperator_TILE:
     case BuiltinOperator_STABLEHLO_DYNAMIC_SLICE:
     case BuiltinOperator_STABLEHLO_DYNAMIC_UPDATE_SLICE:
     case BuiltinOperator_STABLEHLO_IOTA:
@@ -2761,6 +2762,14 @@ TfLiteStatus ParseSvdf(const Operator* op, ErrorReporter* error_reporter,
 // selective registration for the OpResolver implementation in micro.
 TfLiteStatus ParseTanh(const Operator*, ErrorReporter*, BuiltinDataAllocator*,
                        void**) {
+  return kTfLiteOk;
+}
+//
+// We have this parse function instead of directly returning kTfLiteOk from the
+// switch-case in ParseOpData because this function is used as part of the
+// selective registration for the OpResolver implementation in micro.
+TfLiteStatus ParseTile(const Operator*, ErrorReporter*,
+                            BuiltinDataAllocator*, void**) {
   return kTfLiteOk;
 }
 //
