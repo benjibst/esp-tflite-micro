@@ -993,7 +993,6 @@ TfLiteStatus ParseOpDataTfLite(const Operator* op, BuiltinOperator op_type,
     case BuiltinOperator_SCATTER_ND:
     case BuiltinOperator_SELECT:
     case BuiltinOperator_SLICE:
-    case BuiltinOperator_TILE:
     case BuiltinOperator_TOPK_V2:
     case BuiltinOperator_TRANSPOSE:
     case BuiltinOperator_RANGE:

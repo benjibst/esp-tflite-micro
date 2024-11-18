@@ -125,6 +125,8 @@ TFLMRegistration Register_SUB();
 TFLMRegistration Register_SUM();
 TFLMRegistration Register_SVDF();
 TFLMRegistration Register_TANH();
+TFLMRegistration Register_TILE();
+
 TFLMRegistration Register_TRANSPOSE();
 TFLMRegistration Register_TRANSPOSE_CONV();
 // TODO(b/230666079): resolve conflict with xtensa implementation
